@@ -8,12 +8,12 @@ export const resolver = {
   },
 
   Mutation: {
-    bulkSave: async (_, { file }) => {
+    uploadArticles: async (_, { file }) => {
       const { createReadStream } = await file.promise;
       await bulkSave(createReadStream);
     },
 
-    bulkAppend: async (_, { file }) => {
+    appendArticles: async (_, { file }) => {
       const { createReadStream } = await file.promise;
       await bulkAppend(createReadStream);
     },

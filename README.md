@@ -40,3 +40,81 @@ To run this application using docker:
 
 When you run docker compose, these are the ports exposed to your computer:
 - 3000 for Warehouse
+
+
+Query sample
+---
+<br>- `query GET_ARTICLE($artId: String!){
+  article(artId: $artId){
+  art_id
+  name
+  stock
+  }
+  }`
+
+<br>- `query GET_ARTICLES{
+  articles{
+  art_id
+  name
+  stock
+  }
+  }`
+
+<br>- `query GET_PRODUCTS{
+  products{
+  _id
+  name
+  isAvailable
+  contain_articles {
+  article {
+  art_id
+  stock
+  }
+  isAvailable
+  quantity
+  }
+  }
+  }`
+
+<br>- `query GET_PRODUCT($id: ID!){
+  product(id: $id){
+  _id
+  name
+  isAvailable
+  contain_articles {
+  article {
+  art_id
+  stock
+  }
+  isAvailable
+  quantity
+  }
+  }
+  }`
+
+Mutation Sample
+---
+
+<br>- `mutation UPLOAD_ARTICLES($file: Upload!){
+uploadArticles(file: $file)
+}`
+
+<br>- `mutation APPEND_ARTICLES($file: Upload!){
+uploadArticles(file: $file)
+}`
+
+<br>- `mutation APPEND_ARTICLES($file: Upload!){
+saveProducts(file: $file)
+}`
+
+<br>- `mutation SELL($id: ID!){
+sell(_id: $id){
+_id
+name
+isAvailable
+contain_articles {
+quantity
+}
+}
+}`
+
