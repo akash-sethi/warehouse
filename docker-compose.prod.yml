@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  warehouse-app:
+    container_name: warehouse-app-prod
+    build:
+      dockerfile: Dockerfile
+      context: .
+    command: yarn start
