@@ -51,7 +51,7 @@ const typeDefs = gql`
     """
     sell(_id: ID!): ProductType!
   }
-    
+
   input ProductInput {
     art_id: String
     name: String

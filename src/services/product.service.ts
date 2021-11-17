@@ -39,7 +39,7 @@ export const sell = async (_id: string) => {
 
   product.contain_articles.forEach(await reduceStock);
 
-  return Product.findProductById(_id);
+  return formatProductResponse(await Product.findProductById(_id));
 };
 
 function isAvailable(product: IProduct): boolean {

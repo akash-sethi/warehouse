@@ -103,7 +103,7 @@ uploadArticles(file: $file)
 uploadArticles(file: $file)
 }`
 
-<br>- `mutation APPEND_ARTICLES($file: Upload!){
+<br>- `mutation UPLOAD_PRODUCTS($file: Upload!){
 saveProducts(file: $file)
 }`
 

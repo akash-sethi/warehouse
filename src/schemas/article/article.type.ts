@@ -9,10 +9,10 @@ const typeDefs = gql`
     name: String
     stock: Int
   }
-  
+
   """
   Upload file
-  """ 
+  """
   scalar Upload
 
   type Query {
