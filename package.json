@@ -2,12 +2,14 @@
   "name": "warehouse-app",
   "version": "1.0.0",
   "scripts": {
+    "tsc": "tsc",
+    "start": "pm2 start ecosystem.config.json --no-daemon",
     "docker:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d -V --no-deps",
     "app-logs:dev": "docker logs warehouse-app-dev -f",
     "docker:dev-with-build": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build -V -d",
     "dev": "cross-env NODE_ENV=development ts-node-dev --respawn --transpile-only src/index.ts",
     "build": "tsc -p .",
-    "docker:prod-build": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up build",
+    "docker:prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up --build -V -d",
     "lint": "tsc && eslint src",
     "lint:fix": "yarn lint --fix",
     "prettier": "prettier --check '**/*.ts'",
@@ -68,6 +70,7 @@
     "http-status": "^1.5.0",
     "joi": "^17.4.2",
     "mongoose": "^6.0.12",
+    "pm2": "^5.1.2",
     "stream-chain": "^2.2.4",
     "stream-json": "^1.7.3"
   }

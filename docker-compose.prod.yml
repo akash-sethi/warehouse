@@ -5,4 +5,6 @@ services:
     build:
       dockerfile: Dockerfile
       context: .
-    command: yarn start
+    environment:
+      - NODE_ENV=production
+    command: npm start
